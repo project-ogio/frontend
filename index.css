@@ -1,3 +1,122 @@
-/* {
-    
-} */
+*{
+    box-sizing: border-box;
+}
+.backgroundColor{
+    background: linear-gradient(#e66465, #9198e5);
+}
+header{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.labelTC{
+    font-size: x-large;
+}
+label{
+    display: grid;
+    text-transform: capitalize;
+    font-size: x-large;
+    margin-bottom: .2rem;
+    /* margin: auto; 
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  */
+}
+.create__group{
+    cursor: pointer;
+    width: 40%;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.inputText{
+    width: 50%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+    padding-left: .5rem;
+    /* margin: auto; 
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  */
+}
+
+.divText{
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+}
+
+.T__And__C{
+    font-size: x-large;
+    margin: .2rem;
+}
+
+.formStyle{
+    margin: auto; 
+    display: grid;  
+    justify-content: center; 
+    align-items: center; 
+}
+
+.create__group:hover{
+    background: gray;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 2px solid green;
+}
+
+.create__sub__group{
+    background: linear-gradient(#e66465, #9198e5);
+    width: 100%;
+    margin-top: 2rem;
+    height: 10rem;
+    text-align: center;
+    border-radius: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: flex;  
+    justify-content: center;
+    align-items: center; 
+}
+
+.create__sub__group:hover{
+    background: linear-gradient(#540404, rgb(145, 179, 229));
+    width: 100%;
+    cursor: pointer;
+    margin-top: 2rem;
+    height: 10rem;
+    text-align: center;
+    border: 0.5px solid black;
+    font-size: 2rem;
+    text-transform: capitalize;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+/* How To Display a Grid */
+.roscaGroup{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+}
+/* How To Display a Grid */
+
+.adminGroup{
+    margin: auto; 
+    display: flex;  
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* User Contribution Page */
+.section__1{
+    font-size: 2rem;
+}

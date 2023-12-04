@@ -5,71 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OGIO</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            background: linear-gradient(#e66465, #9198e5);
-        }
-        header{
-            text-align: center;
-            text-decoration: underline;
-            font-size: 2rem;
-            text-transform: capitalize;
-        }
-        .labelTC{
-            font-size: x-large;
-        }
-        label{
-            display: grid;
-            text-transform: capitalize;
-            font-size: x-large;
-            margin-bottom: .2rem;
-            /* margin: auto; 
-            display: flex;  
-            justify-content: center; 
-            align-items: center;  */
-        }
-        .create__group{
-            cursor: pointer;
-            width: 40%;
-            height: 3rem;
-            font-size: 1rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .inputText{
-            width: 50%;
-            height: 3rem;
-            border-radius: 0.5rem;
-            font-size: 2.5rem;
-            padding-left: .5rem;
-            /* margin: auto; 
-            display: flex;  
-            justify-content: center; 
-            align-items: center;  */
-        }
-        .divText{
-            margin-top: 1rem;
-            margin-bottom: .2rem;
-        }
-        .T__And__C{
-            font-size: x-large;
-            margin: .2rem;
-        }
-        .formStyle{
-            margin: auto; 
-            display: grid;  
-            justify-content: center; 
-            align-items: center; 
-        }
-    </style>
 </head>
 <body>
-    <header>rosca group page</header>
-    <section class="roscaGroup">
+    <header>admin group</header>
+    <main class="adminGroup backgroundColor">
         <form action="" class="formStyle">
             <div class="divText">
                 <label for="groupName">group name</label>
@@ -84,7 +23,7 @@
                 <input type="text" name="contributionAmount" id="contributionAmount" class="inputText">
             </div>
             <div class="divText">
-                <label for="numbersOfMembers">numbers of members</label>
+                <label for="numbersOfMembers">number of members</label>
                 <input type="number" name="numbersOfMembers" min="1" id="numbersOfMembers" class="inputText">
             </div>
             <div class="divText">
@@ -104,9 +43,11 @@
                 </span>
             </div>
             <div class="divText">
+                <a href="./user.html">
                 <input type="button" value="create group" class="create__group">
+                </a>
             </div>
         </form>
-    </section>
+    </main>
 </body>
 </html>
