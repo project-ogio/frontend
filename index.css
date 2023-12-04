@@ -120,3 +120,8 @@ label{
 .section__1{
     font-size: 2rem;
 }
+
+/* Numbers Of Randomly selected Members */
+.divText span{
+    font-size: 2rem;
+}
