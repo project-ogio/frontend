@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.ogioGroup{
+    text-transform: capitalize;
+}
+
+.heroHeading{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* grid-template-columns: repeat(3,1fr);
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    border: 3px solid red; */
+}
+
+.heroHeading > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.heroNav {
+    grid-area: 1 / 2 / 2 / 4;
+}
+
+.ogioPics{
+    width: 5rem;
+    height: 5rem;
+}
+
+.heroNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroNav a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: grey;
+    margin: 1rem;
+    color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.heroNav .active{
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: white;
+    margin: 1rem;
+    color: black;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+.heroNav a:hover{
+    background: white;
+    color: black;
+    border: 2px solid gray;
+}
+
+.loginButtonContainer{
+display: flex;
+justify-content: center;
+align-items: center;
+/* border: 3px solid green;  */
+}
+
+.loginRegister{
+    font-size: 1.5rem;
+    padding: 1rem;
+    background: grey;
+    color: white;
+    /* background: linear-gradient(#e66465, #9198e5);
+    color: chartreuse; */
+    border-radius: 2rem;
+    margin: 0 auto;
+    text-transform: capitalize;
+}
+
+.loginRegister:hover{
+    background: white;
+    color: black;
+    border: 2px solid gray;
+}
+
+/* Here we add the Hero Main pictures */
+.heroMain{
+    background-image: url(../Images/img__1.jpg);
+    width: 100%;
+    height: 50rem;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heroMain > div{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    text-transform: lowercase;
+    place-content: center;
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+
+/* XXX Here we add the Hero Main pictures XXX */
