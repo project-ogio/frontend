@@ -101,10 +101,10 @@ align-items: center;
     background-position: center;
 }
 
-.heroMain > div{
+.heroMain > .heroImages{
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: lowercase;
     place-content: center;
 }
