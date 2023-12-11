@@ -69,7 +69,6 @@
 display: flex;
 justify-content: center;
 align-items: center;
-/* border: 3px solid green;  */
 }
 
 .loginRegister{
@@ -78,8 +77,6 @@ align-items: center;
     background: grey;
     color: white;
     cursor: pointer;
-    /* background: linear-gradient(#e66465, #9198e5);
-    color: chartreuse; */
     border-radius: 2rem;
     margin: 0 auto;
     text-transform: capitalize;
@@ -117,3 +114,21 @@ h3{
 
 
 /* XXX Here we add the Hero Main pictures XXX */
+
+/* /* Here is for services sections */
+.services{
+    text-align: center;
+}
+
+.sectorSections{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.contributeSectors, .otherSectors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+/* /* XXXXXX  Here is for services sections */

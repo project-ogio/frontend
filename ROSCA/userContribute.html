@@ -5,13 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Contribute</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/xrpl/build/xrpl-latest-min.js"></script>
+
+    <script>
+        // Wrap code in an async function so we can use await
+        async function main() {
+        const walletAmount = document.getElementById("enterYourContribution").value;
+        // Define the network client
+        // const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+        const PUBLIC_SERVER = "wss://s.devnet.rippletest.net:51233/";
+        const client = new xrpl.Client(PUBLIC_SERVER);
+        await client.connect();
+    
+    
+        // Another fund style
+        // Create a wallet and fund it with the Testnet faucet:
+        const fund_result = await client.fundWallet();
+        const fund_result2 = await client.fundWallet();
+        const test_wallet = fund_result.wallet;
+        const test_wallet2 = fund_result2.wallet;
+       // console.log("The Fund Wallet 2 result is : ",fund_result)
+    
+        // Now we prepare the Transactions
+        const walletDetails = fund_result.wallet;
+        console.log("The Wallet Details are : ", walletDetails);
+    
+        // const provider = new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/your_project_id');
+        // const web3 = new Web3(provider);
+        // const xpr = new XpringClient('mainnet');
+    
+        // async function storeAddress() {
+        // const accounts = await web3.eth.getAccounts();
+        // const address = accounts[0];
+        // const xprAddress = await xpr.deriveAddressFromPublicKey(address);
+        // console.log("The xprAddress Stored is : ",xprAddress);
+        // }
+    
+    
+        const preparedTransactions = await client.autofill({
+            "TransactionType": "Payment",
+            "Account": test_wallet.classicAddress,
+            "Amount": xrpl.xrpToDrops(walletAmount),
+            "Destination":test_wallet2.classicAddress
+        });
+    
+        console.log("The Prepared Transaction Details are : ", preparedTransactions);
+    
+        const signedTransactions = walletDetails.sign(preparedTransactions);
+    
+        console.log("The signed Transactions wallet is : ", signedTransactions);
+    
+        const results = await client.submitAndWait(signedTransactions.tx_blob);
+        console.log("The submitted wallet results are : ", results);
+        console.log("The meta results are : ", results?.result?.meta?.TransactionResult);
+        document.getElementById("userResults").innerHTML = results?.result?.meta?.TransactionResult;
+        // Disconnect when done (If you omit this, Node.js won't end the process)
+        await client.disconnect();
+        }
+    
+        // main();
+    </script>
+
+
+   
 </head>
 <body>
     <header>user contribute</header>
     <main class="backgroundColor">
         <section class="section__1">
             <span>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque placeat nam, praesentium enim nulla nesciunt quidem laudantium fuga.
+                Kindly enter the amount you want to contribute.
             </span>
         </section>
         <section class="section__2">
@@ -21,18 +84,21 @@
                 <input type="number" name="enterYourContribution" min="1" id="enterYourContribution" class="inputText">
             </div>
             <div class="divText">
-                <input type="checkbox" name="T__And__C" class="T__And__C">
                 <span class="labelTC">
-                    T and C
+                    Result : <span id="userResults"></span>
                 </span>
             </div>
             <div class="divText">
-                <a href="./user.html">
-                <input type="button" value="contribute" class="create__group">
-                </a>
+                <!-- <a href="./user.html"> -->
+                <input type="button" value="contribute" class="create__group" onclick="main();">
+                <!-- </a> -->
             </div>
         </form>
         </section>
     </main>
+
+
+
+   
 </body>
 </html>

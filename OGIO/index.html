@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./metamask.css" type="text/css">
     <script src="/OGIO/node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="modal.css">
+    
 </head>
 <body>
     <main class="ogioGroup">
@@ -32,6 +34,138 @@
             OGIO is an application we work on to make the world a better place for smart contract with legal agreements.
         </div>
     </section>
-    </main>
+    <section>
+        <h3 class="services">services</h3>
+            <h4 class="sectorSections">what sector is your contract based on ?</h4>
+            <div class="contributeSectors">
+                <label for="contributions">
+                    <input type="checkbox" id="contributions" name="contributions" onclick="myModalCheckedBox()"> Contributions
+                </label>
+            </div>
+            <div class="otherSectors">
+                <label for="others">
+                    <input type="checkbox" id="others" name="others"> Others
+                </label>
+            </div>
+    </section>
+
+<!-- The Modal Others Beginning -->
+  <div id="modalOther" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Welcome To Other Sector</h2>
+      </div>
+      <div class="modal-body">
+        <h5>Kindly fill the informations below: </h5>
+        <form action="">
+            <div>
+                <label for="phoneNumber">phone number</label>
+                <input type="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number">
+            </div>
+            <div>
+                <label for="phoneNumber">email address</label>
+                <input type="phoneNumber" id="phoneNumber" placeholder="Enter Email Address">
+            </div>
+            <div>
+                <label for="availableTime">Available Time</label>
+                <input type="availableTime" id="availableTime" placeholder="Enter Available Time">
+            </div>
+            <div>
+                <input type="submit" class="otherBtn">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <h3></h3>
+      </div>
+    </div>
+  </div>
+<!-- The Modal Others Ending -->   
+<!-- The Modal Contributions Beginning -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Welcome To The Contribution Sector</h2>
+      </div>
+      <div class="modal-body">
+        <h5>Kindly click the organisations below for more processes:</h5>
+        <ol>
+            <li>
+                <a href="https://ajo-o.netlify.app/usercontribute" class="contributeNames">
+                AJOO
+                </a>
+            </li>
+            <li class="contributeNames">Chain Link</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <h3></h3>
+      </div>
+    </div>
+</div>
+<!-- The Modal Contributions Ending -->
+
+<script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("modalOther");
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+// modal2
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    modal2.style.display = "none";
+    // modal2
+  }
+}
+
+function myModalCheckedBox() {
+    var checkBox = document.getElementById("contributions");
+    var checkBoxOthers = document.getElementById("others");
+    var text = document.getElementById("text");
+    if (checkBox.checked == true){
+      // text.style.display = "block";
+      modal.style.display = "block";
+      modal2.style.display = "none";
+      // modal2
+    }
+    else if (checkBoxOthers.checked == true){
+        modal.style.display = "none";
+      modal2.style.display = "block";
+    }
+    else {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+        // modal2
+        checkBox.checked == false;
+    }
+}
+</script>
+
+
+</main>
 </body>
 </html>
